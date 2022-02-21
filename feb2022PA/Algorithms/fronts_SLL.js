@@ -28,7 +28,7 @@ class SLL {
             let temp = this.head;
             this.head = this.next;
             delete temp;
-            return head;
+            return this.head;
         }
     }
 }
