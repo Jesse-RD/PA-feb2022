@@ -40,7 +40,7 @@ class SLL {
         if (this.head == null){
             return null;
         } else if (this.next == null){
-            return this;
+            return this.head;
         }
     }
 }
