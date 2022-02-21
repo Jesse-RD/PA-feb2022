@@ -1,4 +1,3 @@
-
 class Node {
     constructor(value){
         this.val = value;
@@ -35,6 +34,7 @@ class SLL {
         return values;
     }
 }
+
 
 let sll1 = new SLL();
 sll1.addFront(4).addFront(8).addFront(5).addFront(9).addFront(6)
