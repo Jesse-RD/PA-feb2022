@@ -35,9 +35,9 @@ class SLL {
     }
 }
 
-
+console.log("--Add new nodes to front for example--")
 let sll1 = new SLL();
 sll1.addFront(4).addFront(8).addFront(5).addFront(9).addFront(6)
 console.log(sll1)
-
+console.log("--Display all node values in list--")
 console.log(sll1.display())
