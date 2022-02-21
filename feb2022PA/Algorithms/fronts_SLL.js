@@ -25,8 +25,10 @@ class SLL {
         if (this.head == null){
             return null;
         } else {
+            let temp = this.head;
             this.head = this.next;
-            return this;
+            delete temp;
+            return head;
         }
     }
 }
