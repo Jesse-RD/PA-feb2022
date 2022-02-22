@@ -29,10 +29,10 @@
                 <h3>Custom Jewelry and Accessories</h3>
             </div>
             <div class="col text-center d-flex flex-column">
-                {% if user == False %}
+                {% if session == 0 %}
                 <a class="btn btn-success mt-4 fw-bold" href="/login">Login</a>
                 <a class="btn btn-info mt-4 fw-bold" href="/register">Register</a>
-                {% elif user.id == session.user_id %}
+                {% elif user == session.user_id %}
                 <form action="/logout" method="post">
                     <button class="btn btn-danger mt-4 fw-bold" type="submit">Logout</button>
                 </form>

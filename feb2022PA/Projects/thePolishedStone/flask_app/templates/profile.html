@@ -71,16 +71,18 @@
                             <h2 class="text-light text-center mt-3">{{user_profile.username}}</h2>
                             <h5 class="text-white fw-normal mt-4">Favorite Stone</h5>
                             {% if user_profile.fav_stone != "None" %}
-                            <h4 class="text-light">{{user_profile.fav_stone}}</h4>
+                            <h4 class="text-light text-center">{{user_profile.fav_stone}}</h4>
                             {% endif %}
                             <h5 class="text-white fw-normal mt-3">Noteable Skills</h5>
                             {% if user_profile.prof != "None" %}
-                            <h4 class="text-light">{{user_profile.prof}}</h4>
+                            <h4 class="text-light text-center">{{user_profile.prof}}</h4>
                             {% endif %}
                             <h5 class="text-white fw-normal mt-3">Description</h5>
                             {% if user_profile.descr != "None" %}
-                            <h4 class="text-light">{{user_profile.descr}}</h4>
+                            <h4 class="text-light text-center">{{user_profile.descr}}</h4>
                             {% endif %}
+                            <p class="mt-5">Last Updated:</p>
+                            <p>{{user_profile.updated_at.strftime('%m/%d/%Y')}} at {{user_profile.updated_at.strftime('%I:%M %p')}}</p>
                         </div>
                     </div>
                 </div>
@@ -102,9 +104,6 @@
                                 <label class="form-label text-white fs-5 fw-bold mt-2">Birthday:</label>
                                 <input type="date" name="dob" class="form-control" value="{{user_profile.dob}}">
                             </div>
-                            <div class="col text-end mt-3">
-                                <input class="btn btn-success mt-1 fw-bold" type="submit" value="Save">
-                            </div>
                             <div class="pb-5">
                                 <label class="form-label text-white fs-5 fw-bold mt-2">Profeciencies:</label>
                                 <textarea name="prof" id="prof" cols="100" rows="2">{{user_profile.prof}}</textarea>
@@ -113,6 +112,9 @@
                                 <label class="form-label text-white fs-5 fw-bold mt-2">Bio:</label>
                                 <textarea name="bio" id="bio" cols="100" rows="5">{{user_profile.bio}}</textarea>
                             </div>
+                            <div class="col text-center mt-3">
+                                <input class="btn btn-success mt-1 fw-bold" type="submit" value="Save">
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -120,6 +122,7 @@
         </div>
     </div>
     <div class=" vstack gap-5">
+        {% if session.user_id == 1 %}
         <div class="container text-light mt-5 mb-5">
             <a class="btn btn-info mt-5" href="/new_product/{{session.user_id}}">New Product</a>
             <table class="table table-hover table-striped table-dark mt-3 text-center">
@@ -158,6 +161,7 @@
                 </tbody>
             </table>
         </div>
+        {% endif %}
         <!-- Addresses -->
         <!-- Payment Methods -->
     </div>

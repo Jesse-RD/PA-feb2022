@@ -64,7 +64,7 @@ def edit_product(user_id, product_id):
     one_product = Product.get_product(prod_data)
     return render_template('edit_product.html', current_user = user_id, product = one_product)
 
-@app.route('/update_product/<int:user_id>/<product_name>', methods=['POST'])
+@app.route('/update_product/<int:user_id>/<product_id>', methods=['POST'])
 def update_product(user_id, product_id):
     user_id = session['user_id']
     if 'user_id' not in session:
@@ -114,18 +114,15 @@ def material_products(material_id):
 @app.route('/<material_id>/<product_id>/details')
 def single_product(product_id, material_id):
     if 'user_id' in session:
-        user_data = {
-            'id': session['user_id']
-        }
+        user_id = session['user_id']
         product_data = {
-            'name': product_id
+            'id': product_id
         }
         mat_data = {
             'material_id': material_id
         }
-        one_user = Users.get_profile(user_data)
         single_product = Product.get_product(product_data)
-        return render_template('/single_product.html', user = one_user, product = single_product, current_mat = material_id)
+        return render_template('/single_product.html', user = user_id, product = single_product, current_mat = material_id)
     else:
         product_data = {
             'id': product_id
