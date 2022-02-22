@@ -61,18 +61,19 @@
             <div class="col-8 container bg-secondary bg-opacity-50 rounded-1 d-grid gap-4 p-5 me-5">
                 <div class="container" style="width: 700px;">
                     <img class="img-thumbnail" src="/static/imgs/jadeRing.jpg" alt=""> 
+                    <p class="text-light text-center">(placeholder)</p>
                     <!-- Image needs to be set to specific product, static image used at placeholder -->
                 </div>
                 <div>
                     <h1 class="text-light text-center">{{product.name}}</h1>
                 </div>
                 <div class="container ms-5">
-                    <label class="form-label text-white text-start fs-5" for="description">Description:</label>
+                    <label class="form-label text-white" for="description">Description:</label>
                     <h4 class="text-light">{{product.prod_desc}}</h4>
                 </div>
             </div>
             <div class="col-2 container mt-5 ms-5 text-center">
-                <h1 class="text-light mt-5">${{product.price}}</h1>
+                <h1 class="text-light mt-5">{{"${:,.2f}".format(product.price)}}</h1>
                 <a class="btn btn-primary fw-bold mt-3 mb-5" href="#">Add To Cart</a>
                 <label class="fw-bold fs-5 text-light mt-5">Listed: {{product.created_at.strftime('%m/%d/%Y')}}</label>
             </div>

@@ -70,19 +70,18 @@
                         <div class="container">
                             <h2 class="text-light text-center mt-3">{{user_profile.username}}</h2>
                             <h5 class="text-white fw-normal mt-4">Favorite Stone</h5>
-                            {% if user_profile.fav_stone != "None" %}
+                            {% if user_profile.fav_stone != None %}
                             <h4 class="text-light text-center">{{user_profile.fav_stone}}</h4>
                             {% endif %}
                             <h5 class="text-white fw-normal mt-3">Noteable Skills</h5>
-                            {% if user_profile.prof != "None" %}
+                            {% if user_profile.prof != None %}
                             <h4 class="text-light text-center">{{user_profile.prof}}</h4>
                             {% endif %}
                             <h5 class="text-white fw-normal mt-3">Description</h5>
-                            {% if user_profile.descr != "None" %}
+                            {% if user_profile.descr != None %}
                             <h4 class="text-light text-center">{{user_profile.descr}}</h4>
                             {% endif %}
-                            <p class="mt-5">Last Updated:</p>
-                            <p>{{user_profile.updated_at.strftime('%m/%d/%Y')}} at {{user_profile.updated_at.strftime('%I:%M %p')}}</p>
+                            
                         </div>
                     </div>
                 </div>
@@ -114,7 +113,10 @@
                             </div>
                             <div class="col text-center mt-3">
                                 <input class="btn btn-success mt-1 fw-bold" type="submit" value="Save">
+                                <p class="mt-3 fw-bold">Last Updated:</p>
+                                <p>{{user_profile.updated_at.strftime('%m/%d/%Y')}} at {{user_profile.updated_at.strftime('%I:%M %p')}}</p>
                             </div>
+                            
                         </div>
                     </form>
                 </div>
@@ -145,7 +147,7 @@
                             {% else %}
                             <tr>
                                 <td class="fs-3 pe-5">{{product.name}}</td>
-                                <td class="fs-3 fw-bold">${{product.price}}</td>
+                                <td class="fs-3 fw-bold">{{"${:,.2f}".format(product.price)}}</td>
                                 <td class="d-flex justify-content-evenly">
                                     <form class="mb-1 mt-2" action="/edit_product/{{session.user_id}}/{{product.id}}">
                                         <button class="btn btn-warning">Edit</button>

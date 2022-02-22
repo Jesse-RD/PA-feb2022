@@ -55,9 +55,6 @@ def process_product(user_id):
 @app.route('/edit_product/<int:user_id>/<product_id>')
 def edit_product(user_id, product_id):
     user_id = session['user_id']
-    data = {
-        'id': user_id
-    }
     prod_data = {
         'id': product_id
     }

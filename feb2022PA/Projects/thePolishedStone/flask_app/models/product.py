@@ -20,13 +20,13 @@ class Product:
     def validate_product(product):
         is_valid = True
         if len(product['name']) < 1:
-            flash("Must provide a name for this product.")
+            flash("Please provide a name for this product.")
             is_valid = False
         if len(product['material_id']) < 1:
-            flash("Must provide a material for this product.")
+            flash("PLease provide a material for this product.")
             is_valid = False
         if len(product['prod_desc']) < 10:
-            flash("Must provide a description longer than 20 characters.")
+            flash("Please provide a description longer than 10 characters.")
             is_valid = False
         if len(product['price']) < 0.01:
             flash("Please provide a price for this product.")
@@ -37,10 +37,10 @@ class Product:
     def validate_edit(product):
         is_valid = True
         if len(product['name']) < 1:
-            flash("Must provide a name for this product.")
+            flash("Please provide a name for this product.")
             is_valid = False
         if len(product['prod_desc']) < 10:
-            flash("Must provide a description longer than 20 characters.")
+            flash("Please provide a description longer than 10 characters.")
             is_valid = False
         if len(product['price']) < 0.01:
             flash("Please provide a price for this product.")
@@ -100,7 +100,7 @@ class Product:
 
     @classmethod
     def update_product(cls, data):
-        query = "UPDATE products SET name=%(name)s, prod_desc=%(prod_desc)s, price=%(price)s, updated_at=NOW() WHERE name = %(name)s"
+        query = "UPDATE products SET name=%(name)s, prod_desc=%(prod_desc)s, price=%(price)s, updated_at=NOW() WHERE id = %(id)s"
         results = connectToMySQL(cls.db_name).query_db(query, data)
         return results
 

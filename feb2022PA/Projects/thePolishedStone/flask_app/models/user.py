@@ -56,14 +56,14 @@ class Users:
         is_valid = True
         users_with_email = Users.get_by_email({'email': user['email']})
         if not users_with_email:
-            flash("There is no record this account exists.")
+            flash("Invalid Email/Password. Please Try Again.")
             is_valid = False
         if users_with_email:
             if len(user['email']) < 8:
-                flash("Invalid Username/Password")
+                flash("Invalid Email/Password. Please Try Again.")
                 is_valid = False
             if len(user['password']) < 8:
-                flash("Invalid Username/Password")
+                flash("Invalid Email/Password. Please Try Again.")
                 is_valid = False
         return is_valid
 
