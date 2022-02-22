@@ -9,3 +9,5 @@ WIP eCommerce Website, Functional but not ready for deployment
 -Cart is not finished. Sales are currently intended to be made via local pickup or through contact until implementation of electronic payment.
 
 -Currently biggest hurdle to cross is file uploads. Have to implement profile picture upload and product picture(s) upload.
+
+-Planning to add PayPal, Stripe, and/or CC for payment methods
