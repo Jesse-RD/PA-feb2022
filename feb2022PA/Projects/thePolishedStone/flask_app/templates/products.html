@@ -56,7 +56,7 @@
             </div>
         </nav>
     </div>
-    <div class="container w-25">
+    <div class="container w-50">
         <div class="row">
             {% for products in all_products %}
             <div class="col">
@@ -70,20 +70,22 @@
                         <img class="rounded-1 w-50" src="/static/imgs/digging.gif" alt="">
                     </div>
                     {% else %}
-                    <div class="card bg-dark" style="width: 24rem;">
-                        <img class="img-thumbnail w-50 mx-auto mt-4" src="/static/imgs/jadeRing.jpg" alt="">
-                        <p class="text-white text-center">(placeholder)</p>
-                        <div class="card-body">
-                            <div class="mt-2 text-center">
-                                <p class="card-title text-light fs-3">{{products.name}}</p>
-                            </div>
-                            <div class=" text-center mt-3">
-                                <p class="card-text text-light fs-4 mt-2">${{products.price}}</p>
-                            </div>
-                            <p class="text-white text-center mt-4">Description:</p>
-                            <p class="card-text text-light text-center mb-4 fs-5">{{products.prod_desc}}</p>
-                            <div class="text-center mb-3">
-                                <a href="{{products.id}}/details" class="btn btn-primary fw-bold">View Details</a>
+                    <div class="">
+                        <div class="card bg-dark" style="width: 25rem;">
+                            <img class="img-thumbnail w-50 mx-auto mt-4" src="/static/imgs/jadeRing.jpg" alt="">
+                            <p class="text-white text-center">(placeholder)</p>
+                            <div class="card-body">
+                                <div class="mt-2 text-center">
+                                    <p class="card-title text-light fs-3">{{products.name}}</p>
+                                </div>
+                                <div class=" text-center mt-3">
+                                    <p class="card-text text-light fs-4 mt-2">${{products.price}}</p>
+                                </div>
+                                <p class="text-white text-center mt-4">Description:</p>
+                                <p class="card-text text-light text-center mb-4 fs-5">{{products.prod_desc}}</p>
+                                <div class="text-center mb-3">
+                                    <a href="{{products.id}}/details" class="btn btn-primary fw-bold">View Details</a>
+                                </div>
                             </div>
                         </div>
                     </div>
